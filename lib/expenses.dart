@@ -29,9 +29,22 @@ class _ExpenseState extends State<Expenses> {
         category: Category.leisure),
   ];
 
+  void _openAddExpenseOverlay(){
+    showModalBottomSheet(
+      context: context, //context is globally available class by flutter if a class extends State<>
+      builder: (ctx)=> Text("Modal bottom sheet"),
+      );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Flutter ExpenseTracker"),
+        actions: [
+        IconButton(
+          onPressed: _openAddExpenseOverlay,
+          icon: const Icon(Icons.add),)
+      ],),
       body: Column(
         children: [
           const Text("The Chart"),
