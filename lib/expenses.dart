@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_expense_tracker_app/models/expense.dart';
 import 'package:flutter_expense_tracker_app/widgets/expenses_list/expenses_list.dart';
+import 'package:flutter_expense_tracker_app/widgets/new_expense.dart';
 
 //in statfeul weidget,
 //1. createstate function override inside it
@@ -32,7 +33,7 @@ class _ExpenseState extends State<Expenses> {
   void _openAddExpenseOverlay(){
     showModalBottomSheet(
       context: context, //context is globally available class by flutter if a class extends State<>
-      builder: (ctx)=> Text("Modal bottom sheet"),
+      builder: (ctx)=> const NewExpense(),
       );
   }
   @override
